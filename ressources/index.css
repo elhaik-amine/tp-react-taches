@@ -1,0 +1,141 @@
+/* ==========================================================
+   TP React – Mes tâches
+   Feuille de style FOURNIE : copiez-la dans src/index.css.
+   Vous n'avez pas à la modifier, concentrez-vous sur React.
+   ========================================================== */
+
+:root {
+  --fond: #f5f5f7;
+  --surface: #ffffff;
+  --texte: #1d1d1f;
+  --texte-doux: #6e6e73;
+  --bordure: #d9d9de;
+  --accent: #5b4bdb;
+  --accent-doux: #ecebfd;
+  --succes: #1f8a4c;
+  --danger: #c4314b;
+  --rayon: 10px;
+
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  color: var(--texte);
+  background: var(--fond);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fond: #16161a;
+    --surface: #222228;
+    --texte: #f2f2f5;
+    --texte-doux: #a1a1aa;
+    --bordure: #3a3a42;
+    --accent: #9d93ff;
+    --accent-doux: #2c2a4a;
+    --succes: #4ade80;
+    --danger: #f87171;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; }
+
+/* ---------- Mise en page ---------- */
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.entete h1 { margin: 0; font-size: 1.8rem; }
+.entete p { margin: 4px 0 0; color: var(--texte-doux); }
+
+.pied {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--texte-doux);
+}
+
+/* ---------- Carte (conteneur générique) ---------- */
+.carte {
+  background: var(--surface);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  padding: 16px;
+}
+.carte h2 { margin: 0 0 12px; font-size: 1.1rem; }
+
+/* ---------- Boutons et champs ---------- */
+button {
+  font: inherit;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--bordure);
+  background: var(--surface);
+  color: var(--texte);
+  cursor: pointer;
+}
+button:hover { border-color: var(--accent); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+button.principal { background: var(--accent); border-color: var(--accent); color: #fff; }
+button.danger { color: var(--danger); }
+button.actif { background: var(--accent-doux); border-color: var(--accent); }
+
+input[type='text'] {
+  font: inherit;
+  flex: 1;
+  min-width: 0;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--bordure);
+  background: var(--fond);
+  color: var(--texte);
+}
+
+/* ---------- Liste de tâches ---------- */
+.liste-taches {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tache {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--bordure);
+  border-radius: 8px;
+}
+.tache .titre { flex: 1; }
+.tache.terminee .titre { text-decoration: line-through; color: var(--texte-doux); }
+
+.vide { color: var(--texte-doux); font-style: italic; margin: 0; }
+
+/* ---------- Formulaire, filtres, statistiques ---------- */
+.formulaire, .filtres, .ligne {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.stats { display: flex; gap: 16px; flex-wrap: wrap; margin: 0; }
+.stats strong { font-size: 1.4rem; display: block; }
+.stats .terminees strong { color: var(--succes); }
+
+/* ---------- Horloge et compteur ---------- */
+.horloge, .valeur-compteur {
+  font-variant-numeric: tabular-nums;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.erreur { color: var(--danger); }

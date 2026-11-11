@@ -1,0 +1,7 @@
+[
+  { "id": 1, "titre": "Installer Node.js et Vite", "terminee": true },
+  { "id": 2, "titre": "Comprendre les composants", "terminee": true },
+  { "id": 3, "titre": "Passer des données avec les props", "terminee": false },
+  { "id": 4, "titre": "Gérer l'état avec useState", "terminee": false },
+  { "id": 5, "titre": "Synchroniser avec useEffect", "terminee": false }
+]
